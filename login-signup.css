@@ -60,7 +60,23 @@ body{
     color: white;
 }
 
+.box button:hover{
+    background-color: rgb(84, 0, 219);
+}
+
 .box p{
     font-weight:normal;
     color: gray;
+}
+
+.message{
+    background-color: rgb(253, 185, 185);
+    width: 90%;
+    margin: 5px auto;
+    border-radius: 5px;
+}
+
+.message p{
+    padding: 5px;
+    color: red;
 }
