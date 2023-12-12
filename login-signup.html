@@ -18,11 +18,11 @@
         <form class="box" id="loginForm">
             <div class="input">
                 <i class="fa fa-envelope"></i>
-                <input type="email" name="email" placeholder="Enter Email">
+                <input type="email" name="email" placeholder="Enter Email" required>
             </div>
             <div class="input password">
                 <i class="fa fa-lock"></i>
-                <input type="password" name="password" placeholder="Enter Your Password">
+                <input type="password" name="password" placeholder="Enter Your Password" required>
             </div>
             <button type="submit" class="input">Login</button>
             <p>Not a member? <a href="#signup" onclick="toggleForm('signup')">Signup Here</a></p>
@@ -35,19 +35,19 @@
         <form class="box" id="signupForm">
             <div class="input">
                 <i class="fa fa-user"></i>
-                <input type="email" name="name" placeholder="Enter Name">
+                <input type="name" name="name" placeholder="Enter Name" required>
             </div>
             <div class="input">
                 <i class="fa fa-envelope"></i>
-                <input type="email" name="email" placeholder="Enter Email">
+                <input type="email" name="email" placeholder="Enter Email" required>
             </div>
             <div class="input password">
                 <i class="fa fa-lock"></i>
-                <input type="password" name="password" placeholder="Enter Your Password">
+                <input type="password" name="password" placeholder="Enter Your Password" required>
             </div>
             <div class="input password">
                 <i class="fa fa-lock"></i>
-                <input type="password" name="confirm_password" placeholder="Re-Enter Your Password">
+                <input type="password" name="confirm_password" placeholder="Re-Enter Your Password" required>
             </div>
             <button type="submit" class="input">Signup</button>
             <p>Already a member? <a href="#login" onclick="toggleForm('login')">Login Here</a></p>
