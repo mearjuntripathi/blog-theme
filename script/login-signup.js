@@ -78,30 +78,33 @@ function check(formData, formName) {
     }
 }
 
-function submitForm(formData, formName) {
-    if (formName === 'login') {
-        fetch('/users', {
-            method: 'POST',
-            body: formData,
-            headers: {
-                "Content-type": "application/json; charset=UTF-8"
-            }
-        }).then(response => console.log(response))
-            .catch(error => {
-                console.error('Error:', error);
-            });
-    } else {
-        formData.delete('confirm_password');
-        console.log(formData);
-        fetch('/users', {
-            method: 'POST',
-            body: formData,
-            headers: {
-                "Content-type": "application/json; charset=UTF-8"
-            }
-        }).then(response => console.log(response))
-            .catch(error => {
-                console.error('Error:', error);
-            });
-    }
-}
+
+// custom form value
+
+// function submitForm(formData, formName) {
+//     if (formName === 'login') {
+//         fetch('/users', {
+//             method: 'POST',
+//             body: formData,
+//             headers: {
+//                 "Content-type": "application/json; charset=UTF-8"
+//             }
+//         }).then(response => console.log(response))
+//             .catch(error => {
+//                 console.error('Error:', error);
+//             });
+//     } else {
+//         formData.delete('confirm_password');
+//         console.log(formData);
+//         fetch('/users', {
+//             method: 'POST',
+//             body: formData,
+//             headers: {
+//                 "Content-type": "application/json; charset=UTF-8"
+//             }
+//         }).then(response => console.log(response))
+//             .catch(error => {
+//                 console.error('Error:', error);
+//             });
+//     }
+// }
