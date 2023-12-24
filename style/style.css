@@ -10,7 +10,7 @@ body{
     /* background-color: rgb(37, 37, 37); */
     color: white;
     min-height: 100vh;
-    font-family: Arial, Helvetica, sans-serif
+    font-family: 'Courier New';
 }
 
 header{
@@ -23,24 +23,48 @@ header{
     justify-content: space-around;
 }
 
-.nav{
-    display: flex;
-    gap: 30px;
-    list-style: none;
-    color: black;
-}
 
 header h1{
     font-family: 'Rubik Doodle Shadow';
     color: rgb(255, 255, 255);
 }
 
-.nav li{
+.nav-list{
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    color: black;
+}
+
+.nav-list li{
     display: inline;
     text-transform: uppercase;
-    font-family: sans-serif;
     font-size: medium;
     font-weight: 500;
+    transition: all 0.1s ease 0.1s;
+    cursor: pointer;
+}
+
+.nav-list li:hover{
+    color: white;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.bars{
+    padding: 5px;
+    border: none;
+    font-family: 'Courier New';
+    font-weight: bold;
+    background: transparent;
+    color: white;
+    display: none;
+    transition: all 0.1s ease 0.1s;
+}
+
+.bars:hover{
+    border: 2px solid;
+    border-radius: 10px;
 }
 
 footer{
@@ -61,9 +85,7 @@ footer > .info > .block {
     flex-direction: column;
     text-align: start;
     gap: 10px;
-    padding: 5px;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding: 30px 20px;
     max-width: 800px;
 }
 
@@ -78,4 +100,23 @@ footer > .intro{
     color: rgb(0, 0, 0);
     background-color: white;
     text-transform: uppercase;
+}
+
+@media (max-width: 750px){
+    .nav button{
+        display: block;
+    }
+    .nav-list{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        margin: auto;
+        gap: 15px;
+        align-items: center;
+        border-radius: 10px;
+        background-color: rgb(128, 54, 248);
+        padding: 10px 20px;
+        display: none;
+    }
 }

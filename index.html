@@ -3,20 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- It is a Awasome Font Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./style/style.css">
     <title>Document</title>
 </head>
 <body>
     <header>
             <h1>Blog Website</h1>
-            <ul class="nav">
+            <nav class="nav">
+            <button class="bars" onclick="dropdown()"><i class="fa fa-bars"></i> MENU</button>
+            <ul class="nav-list">
                 <li>Categories</li>
                 <li>Deals</li>
                 <li>About</li>
                 <li>Advertise</li>
             </ul>
+            </nav>
     </header>
-
+</header>
     <footer>
         <div class="info">
             <div class="block"><h1>Blog Website</h1>
@@ -43,3 +48,14 @@
     </footer>
 </body>
 </html>
+
+<script>
+    function dropdown() {
+        let value = document.querySelector('.nav-list');
+        if(value.style.display == 'none'){
+            value.style.display = 'flex';
+        }else{
+            value.style.display = 'none';
+        }
+    }
+</script>
