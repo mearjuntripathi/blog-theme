@@ -1,215 +1,265 @@
  @import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
 
-body{
-    /* background-color: rgb(37, 37, 37); */
-    color: white;
-    min-height: 100vh;
-    font-family: 'Courier New';
+ body {
+     /* background-color: rgb(37, 37, 37); */
+     min-height: 100vh;
+     font-family: 'Courier New';
+     display: flex;
+     flex-direction: column;
+ }
+
+ header {
+     width: 100%;
+     background-color: rgb(128, 54, 248);
+     padding: 20px;
+     backdrop-filter: blur(5px);
+     display: flex;
+     align-items: center;
+     justify-content: space-around;
+ }
+
+
+ header h1 {
+     font-family: 'Rubik Doodle Shadow';
+     color: rgb(255, 255, 255);
+ }
+
+ .nav-list {
+     display: flex;
+     gap: 30px;
+     list-style: none;
+ }
+
+ a{
+    text-decoration: none;
+ }
+
+ .nav-list li, a {
+     display: inline;
+     text-transform: uppercase;
+     font-size: medium;
+     font-weight: bold;
+     transition: all 0.1s linear 0.1s;
+     cursor: pointer;
+     color: rgb(205, 202, 229);
+ }
+
+ .nav-list li:hover, a:hover, .active{
+     color: white;
+     font-weight: bolder;
+     text-decoration: underline;
+ }
+
+ .bars{
+     padding: 5px;
+     border: none;
+     font-family: 'Courier New';
+     font-weight: bold;
+     background: transparent;
+     color: white;
+     display: none;
+     transition: all 0.1s ease 0.1s;
+ }
+
+ .bars-focus {
+     border: 2px solid;
+     border-radius: 10px;
+ }
+
+ main {
+     flex: 1;
+     padding: 20px;
+ }
+
+ .blogs, .catagories{
     display: flex;
-    flex-direction: column;
-}
+     flex-wrap: wrap;
+     justify-content: space-around;
+     align-items: flex-start;
+     gap: 50px;
+     display: n;
+ }
 
-header{
-    width: 100%;
-    background-color: rgb(128, 54, 248);
-    padding: 20px;
-    backdrop-filter: blur(5px);
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
+ .blog {
+     max-width: 500px;
+     color: black;
+     box-shadow: 0 0 1px;
+     border-radius: 5px;
+     cursor: pointer;
+     display: flex;
+     flex-direction: column;
+     gap: 10px;
+     text-align: center;
+     font-family: Arial;
+     transition: all 0.3s linear;
+ }
 
+ .blog>.cover-img {
+     max-width: 100%;
+ }
 
-header h1{
-    font-family: 'Rubik Doodle Shadow';
-    color: rgb(255, 255, 255);
-}
+ .blog>.title {
+     padding: 10px;
+ }
 
-.nav-list{
-    display: flex;
-    gap: 30px;
-    list-style: none;
-    color: rgb(205, 202, 229);
-}
+ .blog>.description {
+     padding: 10px;
+     font-size: medium;
+ }
 
-.nav-list li{
-    display: inline;
-    text-transform: uppercase;
-    font-size: medium;
-    font-weight: bold;
-    transition: all 0.1s ease 0.1s;
-    cursor: pointer;
-}
+ .blog>.info {
+     display: flex;
+     flex-direction: column;
+     font-size: small;
+     align-items: center;
+ }
 
-.nav-list li:hover{
-    color: white;
-    font-weight: bolder;
-    text-decoration: underline;
-}
+ .blog>.info>.name {
+     font-weight: bold;
+     padding: 10px;
+ }
 
-.bars{
-    padding: 5px;
-    border: none;
-    font-family: 'Courier New';
-    font-weight: bold;
-    background: transparent;
-    color: white;
-    display: none;
-    transition: all 0.1s ease 0.1s;
-}
+ .blog>.info>.name>span {
+     font-weight: normal;
+     color: rgb(95, 92, 111);
+ }
 
-.bars-focus{
-    border: 2px solid;
-    border-radius: 10px;
-}
+ .rate {
+     display: flex;
+     flex-wrap: wrap;
+     width: 100%;
+     color: white;
+     font-weight: bolder;
+     justify-content: space-around;
+     padding: 5px;
+ }
 
-main {
-    flex: 1;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: flex-start; 
-    gap: 50px;
-    padding: 20px;
-}
+ .rate > .like {
+     background-color: blueviolet;
+     width: 40%;
+     border-radius: 5px;
+     padding: 20px;
+ }
 
+ .rate > .comment {
+     background-color: rgb(124, 50, 194);
+     width: 40%;
+     border-radius: 5px;
+     padding: 20px;
+ }
 
-.blog{
+ .like:hover,
+ .comment:hover {
+     background-color: rgb(127, 20, 226);
+ }
+
+ .blog:hover {
+     box-shadow: 0 0 5px;
+     color: rebeccapurple;
+ }
+
+ .catagory{
     max-width: 500px;
-    color: black;
-    box-shadow: 0 0 1px;
+    padding: 50px;
+    border-radius: 10px;
+    background-color: rgb(115, 84, 226);
+    color: rgb(255, 255, 255);
+ }
+
+ .catagory > .title{
+    font-family: 'Rubik Doodle Shadow';
+ }
+
+ .input{
+    margin: auto;
+    max-width: 500px;
+    justify-content: center;
+    gap: 5px;
+    display: flex;
+    padding: 5px;
+    border: 1px solid blueviolet;
     border-radius: 5px;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
-    font-family: Arial;
-    transition: all 0.3s linear;
-}
+    background-color: white;
+ }
+ .input > input{
+    user-select: none;
+    outline: none;
+    width: 90%;
+    font-weight: bolder;
+    border: none;
+ }
 
-.blog > .cover-img{
-    max-width: 100%;
-}
-
-.blog > .title{
-    padding: 10px;
-}
-
-.blog > .description{
-    padding: 10px;
-    font-size: medium;
-}
-
-.blog > .info{
-    display: flex;
-    flex-direction: column;
-    font-size: small;
-    align-items: center;
-}
-
-.blog > .info > .name{
-    font-weight: bold;
-    padding: 10px;
-}
-
-.blog > .info > .name > span{
-    font-weight: normal;
-    color: rgb(95, 92, 111);
-}
-
-.rate{
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
+ .input > button{
+    padding: 5px;
+    border-color: blueviolet;
     color: white;
     font-weight: bolder;
-    justify-content: space-around;
-    padding: 5px;
-}
-.rate > .like{
+    border-radius: 5px;
     background-color: blueviolet;
-    width: 40%;
-    border-radius: 5px;
-    padding: 20px;
-}
-.rate > .comment{
-    background-color: rgb(124, 50, 194);
-    width: 40%;
-    border-radius: 5px;
-    padding: 20px;
-}
+ }
 
-.like:hover, .comment:hover{
-    background-color: rgb(127, 20, 226);
-}
+ footer {
+     width: 100%;
+     background-color: rgb(128, 54, 248);
+     position: relative;
+     bottom: 0;
+     color: #fff;
+ }
 
-.blog:hover{
-    box-shadow: 0 0 5px;
-    color: rebeccapurple;
-}
+ footer .info {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-around;
+ }
 
-footer {
-    width: 100%;
-    background-color: rgb(128, 54, 248);
-    position: relative;
-    bottom: 0;
-    color: #fff;
-}
+ footer>.info>.block {
+     display: flex;
+     flex-direction: column;
+     text-align: start;
+     gap: 10px;
+     padding: 30px 20px;
+     max-width: 800px;
+ }
 
-footer .info {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
+ footer .info .block h1 {
+     font-family: 'Rubik Doodle Shadow';
+ }
 
-footer > .info > .block {
-    display: flex;
-    flex-direction: column;
-    text-align: start;
-    gap: 10px;
-    padding: 30px 20px;
-    max-width: 800px;
-}
+ footer>.intro {
+     width: 100%;
+     padding: 10px;
+     text-align: center;
+     color: rgb(0, 0, 0);
+     background-color: white;
+     text-transform: uppercase;
+ }
 
-footer .info .block h1 {
-    font-family: 'Rubik Doodle Shadow';
-}
+ @media (max-width: 750px) {
+     .nav button {
+         display: block;
+     }
 
-footer > .intro {
-    width: 100%;
-    padding: 10px;
-    text-align: center;
-    color: rgb(0, 0, 0);
-    background-color: white;
-    text-transform: uppercase;
-}
+     .nav-list {
+         transition: all 0.5s linear;
+         display: none;
+     }
 
-
-@media (max-width: 750px){
-    .nav button{
-        display: block;
-    }
-    .nav-list{
-        transition: all 0.5s linear;
-        display: none;
-    }
-    .dropdown{
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        right: 10px;
-        gap: 15px;
-        align-items: center;
-        border-radius: 10px;
-        background-color: rgb(128, 54, 248);
-        padding: 10px 20px;
-        transition: all .5s linear;
-    }
-}
+     .dropdown {
+         display: flex;
+         flex-direction: column;
+         position: absolute;
+         right: 10px;
+         gap: 15px;
+         align-items: center;
+         border-radius: 10px;
+         background-color: rgb(128, 54, 248);
+         padding: 10px 20px;
+         transition: all .5s linear;
+     }
+ }

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/profile.css">
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="script/profile.js" defer></script>
+    <!-- It is a Awasome Font Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <a href="index.html"><h1>Blog Website</h1></a>
+        <nav class="nav">
+            <button class="bars" onclick="dropdown(this)"><i class="fa fa-bars"></i> MENU</button>
+            <ul class="nav-list">
+                <li><a href="Catagories.html">Categories</a></li>
+                <li><a href="Search.html"><i class="fa fa-search"></i> Search</a></li>
+                <li>About</li>
+                <!-- if not login -->
+                <!-- <li><a href="login-signup.html"><i class="fa fa-user"></i> Login / Signup</a></li> -->
+                <!-- if login -->
+                <li><i class="fa fa-file"></i> Post Article</li>
+                <li class="active"><a href="profile.html"><i class="fa fa-user"></i> View Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="profile">
+            <div class="pic">
+                <img src="https://mearjuntripathi.github.io/image/profile.JPG" alt="">
+                <button style="display: none;">Change Picture</button>
+                <input type="file" onchange="showImage();" name="pic" id="pic" accept="image/*" style="display: none;">
+            </div>
+            <hr>
+            <div class="change-button">
+                <button class="logout"><i class="fa fa-power-off"></i> Logout</button>
+                <button id="check" class="edit"><i class="fa fa-edit"> Edit Profile</i></button>
+            </div>
+            <div class="info">
+                <p class="name">Arjun Tripathi</p>
+                <p class="title">Software Engineer</p>
+                <p class="mail">mearjuntripathi@gmail.com</p>
+                <a style="background-color: blueviolet; padding: 5px 10px; border-radius: 15px;">View written Blogs</a>
+            </div>
+            <form action="" method="post" class="update" style="display: none;">
+                <label for="">Name: </label>
+                <div class="input">
+                    <input type="text" name="name" value="Arjun Tripathi" />
+                </div>
+                <label for="">Title: </label>
+                <div class="input">
+                    <input type="text" name="title" value="Software Enginner" />
+                </div>
+                <label for="">Email: </label>
+                <div class="input">
+                    <input type="email" name="email" value="mearjuntripathi@gmail.com" />
+                </div>
+                <label for="">Password: </label>
+                <div class="input">
+                    <i class="fa fa-lock" id="passid"></i>
+                    <input id="pass" type="password" name="Password" value="" />
+                </div>
+                <label for=""> Confirm Password: </label>
+                <div class="input">
+                    <i class="fa fa-lock" id="cskpassid"></i>
+                    <input id="cskpass" type="password" name="confirm" value="" />
+                </div>
+                <button type="submit" style=" margin:10px;background-color: rgb(8, 164, 70); 
+                            font-size: medium; border:none; padding:5px; 
+                            color: white; border-radius: 10px">
+                    <i class="fa fa-save"> Save</i></button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <div class="info">
+            <div class="block">
+                <h1>Blog Website</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque a cumque ducimus qui fugiat.
+                    Recusandae iusto ipsam tempore, suscipit illo magni voluptatem distinctio quo laudantium facere
+                    fugit saepe voluptate labore.</p>
+            </div>
+            <div class="block">
+                <h2>Popular Post</h2>
+                <ul>
+                    <li>Some time</li>
+                    <li>Some time</li>
+                    <li>Some time</li>
+                    <li>Some time</li>
+                </ul>
+            </div>
+            <div class="block">
+                <h2>Our Top Writer</h2>
+                <ul>
+                    <li>Some time</li>
+                    <li>Some time</li>
+                    <li>Some time</li>
+                    <li>Some time</li>
+                </ul>
+            </div>
+        </div>
+        <div class="intro">ⓒ 2024 Arjun Tripathi, All right reserved</div>
+    </footer>
+</body>
+
+</html>
+
+<script>
+    function dropdown(bars) {
+        let value = document.querySelector('.nav-list');
+        if (value.classList.contains('dropdown')) {
+            value.classList.remove('dropdown');
+            bars.classList.remove('bars-focus');
+        } else {
+            value.classList.add('dropdown');
+            bars.classList.add('bars-focus');
+        }
+    }
+</script>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- It is a Awasome Font Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <a href="index.html"><h1>Blog Website</h1></a>
+        <nav class="nav">
+            <button class="bars" onclick="dropdown(this)"><i class="fa fa-bars"></i> MENU</button>
+            <ul class="nav-list">
+                <li class="active"><a href="Catagories.html">Categories</a></li>
+                <li><a href="Search.html"><i class="fa fa-search"></i> Search</a></li>
+                <li>About</li>
+                <!-- if not login -->
+                <!-- <li><a href="login-signup.html"><i class="fa fa-user"></i> Login / Signup</a></li> -->
+                <!-- if login -->
+                <li><i class="fa fa-file"></i> Post Article</li>
+                <li><a href="profile.html"><i class="fa fa-user"></i> View Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1 style="text-align: center; padding: 20px;">Our Catagories</h1>
+        <div class="catagories">
+            <div class="catagory">
+                <h2 class="title">
+                    Programmings
+                </h2>
+            </div>
+            <div class="catagory">
+                <h2 class="title">
+                    Art
+                </h2>
+            </div>
+            <div class="catagory">
+                <h2 class="title">
+                    Fashions
+                </h2>
+            </div>
+            <div class="catagory">
+                <h2 class="title">
+                    Sports
+                </h2>
+            </div>
+            <div class="catagory">
+                <h2 class="title">
+                    Entertainment
+                </h2>
+            </div>
+        </div>
+        
+    </main>
+    <footer>
+        <div class="info">
+            <div class="block">
+                <h1>Blog Website</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque a cumque ducimus qui fugiat.
+                    Recusandae iusto ipsam tempore, suscipit illo magni voluptatem distinctio quo laudantium facere
+                    fugit saepe voluptate labore.</p>
+            </div>
+            <div class="block">
+                <h2>Popular Post</h2>
+                <ul>
+                    <li>Some time</li>
+                    <li>Some time</li>
+                    <li>Some time</li>
+                    <li>Some time</li>
+                </ul>
+            </div>
+            <div class="block">
+                <h2>Our Top Writer</h2>
+                <ul>
+                    <li>Some time</li>
+                    <li>Some time</li>
+                    <li>Some time</li>
+                    <li>Some time</li>
+                </ul>
+            </div>
+        </div>
+        <div class="intro">ⓒ 2024 Arjun Tripathi, All right reserved</div>
+    </footer>
+</body>
+
+</html>
+
+<script>
+    function dropdown(bars) {
+        let value = document.querySelector('.nav-list');
+        if (value.classList.contains('dropdown')) {
+            value.classList.remove('dropdown');
+            bars.classList.remove('bars-focus');
+        } else {
+            value.classList.add('dropdown');
+            bars.classList.add('bars-focus');
+        }
+    }
+</script>
