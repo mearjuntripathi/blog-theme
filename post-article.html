@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- It is a Awasome Font Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <a href="index.html">
+            <h1>Blog Website</h1>
+        </a>
+        <nav class="nav">
+            <button class="bars" onclick="dropdown(this)"><i class="fa fa-bars"></i> MENU</button>
+            <ul class="nav-list">
+                <li><a href="Catagories.html">Categories</a></li>
+                <li><a href="Search.html"><i class="fa fa-search"></i> Search</a></li>
+                <li>About</li>
+                <!-- if not login -->
+                <!-- <li><a href="login-signup.html"><i class="fa fa-user"></i> Login / Signup</a></li> -->
+                <!-- if login -->
+                <li class="active"><a href="post-article.html"><i class="fa fa-file"></i> Post Article</a></li>
+                <li><a href="profile.html"><i class="fa fa-user"></i> View Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <form action="" method="post">
+                <h1 style="text-align: center;">Blog Form</h1>
+                <hr>
+                <div class="input">
+                    <input type="file" name="" id="cover-img" accept="image/*">
+                </div>
+                <div class="input">
+                    <input type="text" id = "title" placeholder="Title name">
+                </div>
+                <div class="input">
+                    <textarea type="text" id="description" rows="5" placeholder="Descriptions . . ."></textarea>
+                    <p id="result"></p>
+                </div>
+                <div class="input">
+                    <select name="Catagories" id="">
+                        <option value="" selected>Select a Catagories</option>
+                        <option value="Programming">Programming</option>
+                        <option value="Programming">Fashion</option>
+                        <option value="Programming">Art</option>
+                        <option value="Programming">Science</option>
+                    </select>
+                </div>
+                <button type="submit">Next</button>
+            </form>
+            <div class="blog">
+                <img src="https://payu.in/blog/wp-content/uploads/2019/01/Blog-Cover.gif" alt=""
+                    class="cover-img">
+                <h1 class="title">
+                    Your Blog Title
+                </h1>
+                <p class="description">
+                    Your Blog Descriptions
+                </p>
+                <div class="info">
+                    <p class="name"></p>
+                    <div class="rate">
+                        <div class="like">
+                            <i class="fa fa-thumbs-up"></i> Likes waiting
+                        </div>
+                        <div class="comment"><i class="fa fa-comment"></i> Comments waiting</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="info">
+            <div class="block">
+                <h1>Blog Website</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque a cumque ducimus qui fugiat.
+                    Recusandae iusto ipsam tempore, suscipit illo magni voluptatem distinctio quo laudantium facere
+                    fugit saepe voluptate labore.</p>
+            </div>
+            <div class="block">
+                <h2>Popular Post</h2>
+                <ul>
+                    <li>Some time</li>
+                    <li>Some time</li>
+                    <li>Some time</li>
+                    <li>Some time</li>
+                </ul>
+            </div>
+            <div class="block">
+                <h2>Our Top Writer</h2>
+                <ul>
+                    <li>Some time</li>
+                    <li>Some time</li>
+                    <li>Some time</li>
+                    <li>Some time</li>
+                </ul>
+            </div>
+        </div>
+        <div class="intro">ⓒ 2024 Arjun Tripathi, All right reserved</div>
+    </footer>
+</body>
+
+</html>
+
+<script>
+    function dropdown(bars) {
+        let value = document.querySelector('.nav-list');
+        if (value.classList.contains('dropdown')) {
+            value.classList.remove('dropdown');
+            bars.classList.remove('bars-focus');
+        } else {
+            value.classList.add('dropdown');
+            bars.classList.add('bars-focus');
+        }
+    }
+</script>
+
+<script>
+var myText = document.getElementById("description");
+var result = document.getElementById("result");
+var title = document.getElementById('title');
+var cover = document.getElementById('cover-img');
+var description = document.querySelector('.blog .description');
+var blog_title = document.querySelector('.blog .title');
+var blog_cover = document.querySelector('.blog .cover-img');
+var blog_name = document.querySelector('.blog .name');
+var limit = 250;
+
+updateCounter();
+
+myText.addEventListener("input", function () {
+    var textLength = myText.value.length;
+
+    if (textLength > limit) {
+        myText.value = myText.value.slice(0, limit);
+        textLength = limit; // Update textLength after trimming
+    }
+
+    
+    updateCounter();
+    // Apply styling based on the limit
+    description.textContent = textLength == 0 ? "Your Blog Descriptions" : myText.value;
+    myText.style.borderColor = textLength >= limit ? "#ff2851" : "#31821b";
+    result.style.color = textLength >= limit ? "#ff2851" : "#31821b";
+});
+
+title.addEventListener("input", function() {
+    var textLength = title.value.length;
+    blog_title.textContent = textLength == 0 ? "Your Blog Title" : title.value;
+})
+
+cover.addEventListener('change', function(){
+    var file = cover.files[0];
+
+    if (file) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            blog_cover.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+    } else {
+        blog_cover.src = "https://payu.in/blog/wp-content/uploads/2019/01/Blog-Cover.gif";
+    }
+})
+
+function name_time(){
+    var currentDate = new Date();
+    var options = { year: 'numeric', month: 'long', day: 'numeric' };
+    var formattedDate = currentDate.toLocaleDateString('en-US', options);
+    var username = 'Arjun Tripathi' 
+    blog_name.innerHTML = `${username} - <span>${formattedDate}</span>`;
+}
+
+function updateCounter() {
+    var textLength = myText.value.length;
+    result.textContent = textLength + "/" + limit;
+}
+name_time();
+</script>
