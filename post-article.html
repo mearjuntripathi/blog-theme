@@ -45,16 +45,33 @@
                     <p id="result"></p>
                 </div>
                 <div class="input">
-                    <select name="Catagories" id="">
+                    <select name="Catagories" id="categoriesSelect">
                         <option value="" selected>Select a Catagories</option>
                         <option value="Programming">Programming</option>
                         <option value="Programming">Fashion</option>
                         <option value="Programming">Art</option>
                         <option value="Programming">Science</option>
+                        <option value="Other">other</option>
                     </select>
+                </div>
+                <div id="otherOptionContainer" class="input" style="display: none;">
+                    <input type="text" id="otherOptionInput" placeholder="Other option" required/>
                 </div>
                 <button type="submit" style="padding: 10px; font-weight: bolder;">Next >> </button>
             </form>
+            <script>
+                document.getElementById('categoriesSelect').addEventListener('change', function () {
+                    let selectedValue = this.value;
+                    let otherOptionContainer = document.getElementById('otherOptionContainer');
+            
+                    // Check if the selected value is "Other"
+                    if (selectedValue === 'Other') {
+                        otherOptionContainer.style.display = 'block';
+                    } else {
+                        otherOptionContainer.style.display = 'none';
+                    }
+                });
+            </script>
             <div class="blog">
                 <img src="https://payu.in/blog/wp-content/uploads/2019/01/Blog-Cover.gif" alt=""
                     class="cover-img">

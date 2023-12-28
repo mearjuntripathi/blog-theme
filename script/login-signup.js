@@ -41,27 +41,25 @@ for (let i = 0; i < password.length; i++) {
 }
 
 document.getElementById('loginForm').addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent the default form submission
     // Your custom submission logic here
     const formData = new FormData(this);
     if (check(formData, 'login')) {
         console.log('Custom login submission');
-        submitForm(formData, 'login');
     } else {
+        event.preventDefault();
         document.getElementById('login').querySelector('.message').innerHTML = '<p>Insert data is not matched</p>'
     }
 });
 
 document.getElementById('signupForm').addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent the default form submission
     // Your custom submission logic here
     const formData = new FormData(this);
 
     // Log the form values
     if (check(formData, 'signup')) {
         console.log('Custom signup submission');
-        submitForm(formData, 'signup');
     } else {
+        event.preventDefault();
         document.getElementById('signup').querySelector('.message').innerHTML = '<p>Insert data is not matched</p>'
     }
 });
