@@ -41,6 +41,9 @@ cskpass.addEventListener('input', () => {
     }
 });
 
+let passid = document.getElementById('passid');
+let cskpassid = document.getElementById('cskpassid');
+
 passid.addEventListener('click', function () {
     if (this.classList.contains('fa-eye')) {
         this.classList.remove('fa-eye');

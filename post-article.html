@@ -31,17 +31,17 @@
     </header>
     <main>
         <div class="container">
-            <form action="" method="post">
+            <form action="" method="get">
                 <h1 style="text-align: center;">Blog Form</h1>
                 <hr>
                 <div class="input">
-                    <input type="file" name="" id="cover-img" accept="image/*">
+                    <input type="file" name="cover" id="cover-img" accept="image/*">
                 </div>
                 <div class="input">
-                    <input type="text" id = "title" placeholder="Title name">
+                    <input type="text" name = "name" id = "title" placeholder="Title name">
                 </div>
                 <div class="input">
-                    <textarea type="text" id="description" rows="5" placeholder="Descriptions . . ."></textarea>
+                    <textarea type="text" name = "description" id="description" rows="5" placeholder="Descriptions . . ."></textarea>
                     <p id="result"></p>
                 </div>
                 <div class="input">
@@ -55,9 +55,9 @@
                     </select>
                 </div>
                 <div id="otherOptionContainer" class="input" style="display: none;">
-                    <input type="text" id="otherOptionInput" placeholder="Other option" required/>
+                    <input type="text" id="otherOptionInput" placeholder="Other option" />
                 </div>
-                <button type="submit" style="padding: 10px; font-weight: bolder;">Next >> </button>
+                <button type="submit" style="padding: 10px; font-weight: bolder;">Next </button>
             </form>
             <script>
                 document.getElementById('categoriesSelect').addEventListener('change', function () {
